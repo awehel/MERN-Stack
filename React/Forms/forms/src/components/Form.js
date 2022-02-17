@@ -10,6 +10,79 @@ const Form = (props) =>{
     const[password, setPassword] = useState("")
     const[confirmPassword, setConfirmPassword] = useState("")
 
+    const [firstNameError, setFirstNameError] = useState("");
+    const [lastNameError, setLastNameError] = useState("");
+    const [emailError, setEmailError] = useState("");
+    const [passwordError, setPasswordError] = useState("");
+    const [confirmPasswordError, setConfirmPasswordError] = useState("");
+
+    const handleFirstName = (e) =>{
+        
+        setFirstName(e.target.value)
+        if(e.target.value.length < 1){
+            setFirstNameError("First Name is required")
+        }
+        else if(e.target.value.length <2){
+            setFirstNameError("First Name must be at least 2 characters")
+        }
+        else{
+            setFirstNameError("")
+        }
+    }
+
+    const handleLastName = (e) =>{
+        
+        setLastName(e.target.value)
+        if(e.target.value.length < 1){
+            setLastNameError("Last Name is required")
+        }
+        else if(e.target.value.length <2){
+            setLastNameError("Last Name must be at least 2 characters")
+        }
+        else{
+            setLastNameError("")
+        }
+    }
+
+    const handleEmail = (e) =>{
+        
+        setEmail(e.target.value)
+        if(e.target.value.length < 1){
+            setEmailError("Email is required")
+        }
+        else if(e.target.value.length <6){
+            setEmailError("Email must be at least 5 characters")
+        }
+        else{
+            setEmailError("")
+        }
+    }
+
+     const handlePassword = (e) =>{
+        
+        setPassword(e.target.value)
+        if(e.target.value.length < 1){
+            setPasswordError("Password is required")
+        }
+        else if(e.target.value.length <9){
+            setPasswordError("Password must be at least 8 characters")
+        }
+        else{
+            setPasswordError("")
+        }
+    }
+
+     const handleConfirmPassword = (e) =>{
+        
+        setConfirmPassword(e.target.value)
+        if(e.target.value !== password){
+            setConfirmPasswordError("Confirm Password must match Password")
+        }
+        else{
+            setConfirmPasswordError("")
+        }
+    }
+
     const createUser = (e) =>{
         e.preventDefault()
 
@@ -30,10 +103,16 @@ const Form = (props) =>{
                     <input
                         type="text"
                         onChange={(e)=>{
-                            setFirstName(e.target.value)
+                            
+                            handleFirstName(e)
                         }}
                         value={firstName}
                     />
+                    {
+                        firstNameError?
+                        <p>{firstNameError}</p>
+                        :null
+                    }
                 </div>
     
                 <div>
@@ -41,10 +120,15 @@ const Form = (props) =>{
                     <input
                         type="text"
                         onChange={(e)=>{
-                            setLastName(e.target.value)
+                            handleLastName(e)
                         }}
                         value={lastName}
                         />
+                        {
+                        lastNameError?
+                        <p>{lastNameError}</p>
+                        :null
+                    }
                 </div>
     
                 <div>
@@ -52,10 +136,15 @@ const Form = (props) =>{
                     <input
                         type="text"
                         onChange={(e)=>{
-                            setEmail(e.target.value)
+                            handleEmail(e)
                         }}
                         value={email}
                         />
+                        {
+                        emailError?
+                        <p>{emailError}</p>
+                        :null
+                    }
                 </div>
     
                 <div>
@@ -63,10 +152,15 @@ const Form = (props) =>{
                     <input
                         type="password"
                         onChange={(e)=>{
-                            setPassword(e.target.value)
+                            handlePassword(e)
                         }}
                         value={password}
                         />
+                        {
+                        passwordError?
+                        <p>{passwordError}</p>
+                        :null
+                    }
                 </div>
     
                 <div>
@@ -74,10 +168,15 @@ const Form = (props) =>{
                     <input
                         type="password"
                         onChange={(e)=>{
-                            setConfirmPassword(e.target.value)
+                            handleConfirmPassword(e)
                         }}
                         value={confirmPassword}
                         />
+                        {
+                        confirmPasswordError?
+                        <p>{confirmPasswordError}</p>
+                        :null
+                    }
                 </div>
                 <button>Submit</button>
     
