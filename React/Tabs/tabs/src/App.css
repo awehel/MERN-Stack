@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+.activeTabStyle{
+  background-color: black;
+  color: whitesmoke;
+}
+
+.inactiveTabStyle{
+  border: 2px solid gray;
+}
