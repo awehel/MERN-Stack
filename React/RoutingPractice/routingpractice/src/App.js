@@ -38,8 +38,6 @@ function App() {
               <Route path="/:text" element={<Other />}/>
               <Route path="/:text/:font/:background" element={<Other />}/>
               
-              
-
             </Routes>
           </div>
       </BrowserRouter>
