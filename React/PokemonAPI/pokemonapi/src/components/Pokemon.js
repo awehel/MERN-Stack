@@ -1,15 +1,18 @@
 import React, {useEffect, useState} from 'react'
+import axios from 'axios'
 
 const Pokemon = (props) =>{
 
     const[pokemonList, setPokemonList] = useState([])
 
     useEffect(()=>{
-        fetch("https://pokeapi.co/api/v2/pokemon?limit=807")
-        .then((res)=>res.json())
-        .then((res)=>setPokemonList(res.results))
-        .catch((err)=>console.log(err))
-    }, [])
+        axios.get("https://pokeapi.co/api/v2/pokemon?limit=807")
+            .then((res)=>{
+                console.log(res.data.results)
+                setPokemonList(res.data.results)
+                })
+            .catch((err)=>console.log(err))}
+    , [])
 
     return (
         <div>
