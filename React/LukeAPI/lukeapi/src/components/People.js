@@ -80,7 +80,7 @@ const People = (props) => {
                     Home World: <Link to={`/planets/${urlDigits}`}>{planet.name}</Link>
                 </p>
 
-                <p>URL Digits: {urlDigits}</p>
+                
             </div>
         );
     }
