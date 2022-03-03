@@ -1,0 +1,138 @@
+//1
+https://pokeapi.co/api/v2/pokemon/salamence
+ "abilities": [
+        {
+            "ability": {
+                "name": "intimidate",
+                "url": "https://pokeapi.co/api/v2/ability/22/"
+            },
+            "is_hidden": false,
+            "slot": 1
+        },
+        {
+            "ability": {
+                "name": "moxie",
+                "url": "https://pokeapi.co/api/v2/ability/153/"
+            },
+            "is_hidden": true,
+            "slot": 3
+        }
+    ],
+    "base_experience": 300,
+    "forms": [
+        {
+            "name": "salamence",
+            "url": "https://pokeapi.co/api/v2/pokemon-form/373/"
+        }
+    ],
+
+//2
+https://pokeapi.co/api/v2/pokemon/genesect
+"abilities": [
+        {
+            "ability": {
+                "name": "download",
+                "url": "https://pokeapi.co/api/v2/ability/88/"
+            },
+            "is_hidden": false,
+            "slot": 1
+        }
+    ],
+    "base_experience": 300,
+    "forms": [
+        {
+            "name": "genesect",
+            "url": "https://pokeapi.co/api/v2/pokemon-form/649/"
+        },
+
+//3
+https://pokeapi.co/api/v2/pokemon/mewtwo
+ "abilities": [
+        {
+            "ability": {
+                "name": "pressure",
+                "url": "https://pokeapi.co/api/v2/ability/46/"
+            },
+            "is_hidden": false,
+            "slot": 1
+        },
+        {
+            "ability": {
+                "name": "unnerve",
+                "url": "https://pokeapi.co/api/v2/ability/127/"
+            },
+            "is_hidden": true,
+            "slot": 3
+        }
+    ],
+    "base_experience": 340,
+    "forms": [
+        {
+            "name": "mewtwo",
+            "url": "https://pokeapi.co/api/v2/pokemon-form/150/"
+        }
+    ],
+
+
+//4
+https://pokeapi.co/api/v2/pokemon/65
+"abilities": [
+        {
+            "ability": {
+                "name": "synchronize",
+                "url": "https://pokeapi.co/api/v2/ability/28/"
+            },
+            "is_hidden": false,
+            "slot": 1
+        },
+        {
+            "ability": {
+                "name": "inner-focus",
+                "url": "https://pokeapi.co/api/v2/ability/39/"
+            },
+            "is_hidden": false,
+            "slot": 2
+        },
+        {
+            "ability": {
+                "name": "magic-guard",
+                "url": "https://pokeapi.co/api/v2/ability/98/"
+            },
+            "is_hidden": true,
+            "slot": 3
+        }
+    ],
+    "base_experience": 250,
+    "forms": [
+        {
+            "name": "alakazam",
+            "url": "https://pokeapi.co/api/v2/pokemon-form/65/"
+        }
+
+//5
+https://pokeapi.co/api/v2/pokemon/450
+"abilities": [
+        {
+            "ability": {
+                "name": "sand-stream",
+                "url": "https://pokeapi.co/api/v2/ability/45/"
+            },
+            "is_hidden": false,
+            "slot": 1
+        },
+        {
+            "ability": {
+                "name": "sand-force",
+                "url": "https://pokeapi.co/api/v2/ability/159/"
+            },
+            "is_hidden": true,
+            "slot": 3
+        }
+    ],
+    "base_experience": 184,
+    "forms": [
+        {
+            "name": "hippowdon",
+            "url": "https://pokeapi.co/api/v2/pokemon-form/450/"
+        }
+    ],
