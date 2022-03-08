@@ -1,0 +1,19 @@
+db.students.insert({name: 'Saka', home_state: 'CA', lucky_number: 7, birthday: {month: 01, day: 01, year: 2001}})
+db.students.insert({name: 'Smith Rowe', home_state: 'WA', lucky_number: 17, birthday: {month: 02, day: 04, year: 2000}})
+db.students.insert({name: 'Martinelli', home_state: 'WA', lucky_number: '14', birthday: {month: 03, day: 11, year: 2002}})
+db.students.insert({name: 'Odegaard', home_state: 'CA', lucky_number: '8', birthday: {month: 10, day: 6, year: 1999}})
+db.students.insert({name: 'Tierney', home_state: 'CA', lucky_number: '4', birthday: {month: 6, day: 20, year: 1998}})
+
+db.students.find({lucky_number: {$gte:1, $lte:9}})
+
+db.students.updateMany({name:{$exists:true}}, {$set: {interests: ['coding', 'Brunch', 'MongoDB']}})
+
+db.students.update({name:'Tierney'}, {$push: {interests:'taxes'}})
+db.students.update({name:'Tierney'}, {$pull: {interests:'taxes'}})
+
+db.students.updateMany({name:{$exists:true}}, {$set: {number_of_belts: 0}})
+db.students.updateMany({home_state:'WA'}, {$inc: {number_of_belts: 1}})
+
+db.students.updateMany({name:{$exists:true}}, {$rename: {'number_of_belts':'belts_earned'}})
+
+db.students.updateMany({name:{$exists:true}}, {$unset:{lucky_number:''}})
