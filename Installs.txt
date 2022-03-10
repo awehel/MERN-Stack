@@ -1,0 +1,18 @@
+Setup client:
+npx create-react-app client
+
+In Client:
+npm i axios react-router-dom
+
+
+Setup server folder
+mkdir server
+mkdir controllers models config routes
+touch server.js
+
+In Server:
+npm init -y
+npm i express mongoose cors
+
+.gitignore
+node_modules/
