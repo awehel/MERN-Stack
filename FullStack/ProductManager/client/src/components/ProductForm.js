@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 
-const ProductForm = ()=>{
+const ProductForm = (props)=>{
     const [title, setTitle] = useState("")
     const [price, setPrice] = useState(0)
     const [description, setDescription] = useState("")
+    const {product, setProduct} = props
 
     const submitHandler = (e)=>{
         e.preventDefault()
@@ -20,6 +21,7 @@ const ProductForm = ()=>{
             setDescription("")
             setPrice(0)
             setTitle("")
+            setProduct([...product, res.data])
         })
         .catch(err=>console.log(err))
     }
@@ -42,7 +44,7 @@ const ProductForm = ()=>{
                 </p>
                 <button>Create Product</button>
             </form>
-
+            <hr/>
         </div>
     );
 }
