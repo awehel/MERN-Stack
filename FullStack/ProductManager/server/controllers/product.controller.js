@@ -33,5 +33,26 @@ module.exports = {
             console.log("findAllProducts failed")
             res.json({message: "Something went wrong with findAllProducts", error:err})
         })
+    },
+
+    updateProduct : (req, res)=>{
+        Product.findOneAndUpdate({_id: req.params.id}, req.body, {new:true})
+        .then((updatedProduct)=>{
+            console.log(updatedProduct)
+            res.json(updatedProduct)
+        })
+        .catch((err)=>{
+            console.log("updateProduct failed")
+            res.json({ message: "Something went wrong with updateProduct", error:err });
+        })
+    },
+
+    deleteProduct : (req, res)=>{
+        Product.deleteOne({_id: req.params.id})
+        .then((deletedProduct)=>{
+            res.json(deletedProduct)
+            console.log("deleteProduct was successful")
+        })
+        .catch((err)=>res.json(err))
     }
 }

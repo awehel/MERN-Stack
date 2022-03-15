@@ -7,10 +7,14 @@ const Main = (props)=>{
     
     const [product, setProduct] = useState([])
 
+    const removeFromDom = (productId)=>{
+        setProduct(product.filter(product => product._id != productId))
+    }
+
     return (
         <div>
             <ProductForm product={product} setProduct={setProduct} />
-            <ProductList product={product} setProduct={setProduct} />
+            <ProductList product={product} setProduct={setProduct} removeFromDom={removeFromDom}/>
         </div>
     )
 
