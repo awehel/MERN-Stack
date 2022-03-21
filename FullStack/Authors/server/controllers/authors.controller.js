@@ -10,12 +10,13 @@ module.exports = {
         })
         .catch((err)=>{
             console.log("createAuthor has failed")
-            res.json({message:"Something went wrong in createAuthor", error:err})
+            // res.json({message:"Something went wrong in createAuthor", error:err})
+            res.status(400).json(err)
         })
     },
     
     getAllAuthors: (req, res)=>{
-        Author.find({})
+        Author.find({}).sort({name: 1})
         .then((allAuthors)=>{
             console.log(allAuthors)
             res.json(allAuthors)

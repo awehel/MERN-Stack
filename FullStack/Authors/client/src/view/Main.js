@@ -10,7 +10,6 @@ const Main = (props)=>{
 
     return(
         <div>
-            main
             <Navbar/>
             <AuthorTable authorList={authorList} setAuthorList={setAuthorList}/>
         </div>

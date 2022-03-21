@@ -16,7 +16,7 @@ const AuthorTable = (props) => {
                 setAuthorList(res.data);
             })
             .catch((err) => console.log(err));
-    }, [])
+    }, [setAuthorList])
 
     const removeFromDom = (authorId) => {
         setAuthorList(authorList.filter((author) => author._id !== authorId));
@@ -36,7 +36,7 @@ const AuthorTable = (props) => {
                         authorList?
                             authorList.map((author, index)=>(
                             <tr key={index}>
-                                <td>{author.name}</td>
+                                <td><Link to={`/author/${author._id}`}>{author.name}</Link></td>
                                 <td><Link to={`/edit/${author._id}`}>Edit</Link> | <Link to='/'>Delete</Link> <DeleteButton id={author._id} successCallback={()=>removeFromDom(author._id)}/></td>
                             </tr>
                         

@@ -4,7 +4,10 @@ import axios from "axios";
 
 const Form = (props) => {
     
-    const {submitHandler, author, setAuthor} = props
+    const {submitHandler, author, setAuthor, errors, setErrors} = props
+
+    
+    
 
     const inputHandler = (e)=>{
         let newStateObject = {...author}
@@ -18,6 +21,11 @@ const Form = (props) => {
             <form onSubmit={submitHandler}>
                 <label>Name: </label>
                 <input onChange={inputHandler} name="name" value={author.name} type="text" />
+                {
+                    errors.name?
+                    <p>{errors.name.message}</p>
+                    :null
+                }
                 <input type="submit" value="Submit"/>
             </form>
         </div>
