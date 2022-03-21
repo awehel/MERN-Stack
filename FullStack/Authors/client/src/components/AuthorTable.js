@@ -23,10 +23,10 @@ const AuthorTable = (props) => {
     };
     
     return (
-        <div>
-            <table>
+        <div className="container mx-auto my-3">
+            <table className="table table-striped w-50 mx-auto table-bordered">
                 <thead>
-                    <tr>
+                    <tr className="table-dark">
                         <th>Author</th>
                         <th>Actions Available</th>
                     </tr>
@@ -37,7 +37,9 @@ const AuthorTable = (props) => {
                             authorList.map((author, index)=>(
                             <tr key={index}>
                                 <td><Link to={`/author/${author._id}`}>{author.name}</Link></td>
-                                <td><Link to={`/edit/${author._id}`}>Edit</Link> | <Link to='/'>Delete</Link> <DeleteButton id={author._id} successCallback={()=>removeFromDom(author._id)}/></td>
+                                <td><Link to={`/edit/${author._id}`} className="btn btn-success">Edit</Link> | <span> </span>   
+                                {/* <Link to='/'>Delete</Link>  */}
+                                <DeleteButton id={author._id} successCallback={()=>removeFromDom(author._id)}/></td>
                             </tr>
                         
                         ))

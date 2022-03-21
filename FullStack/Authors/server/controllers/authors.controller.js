@@ -47,7 +47,8 @@ module.exports = {
         })
         .catch((err)=>{
             console.log("updateAuthor has failed")
-            res.json({message:"Something went wrong in updateAuthor", error:err})
+            res.status(400).json(err)
+            // res.json({message:"Something went wrong in updateAuthor", error:err})
         })
     },
 

@@ -6,8 +6,6 @@ const Form = (props) => {
     
     const {submitHandler, author, setAuthor, errors, setErrors} = props
 
-    
-    
 
     const inputHandler = (e)=>{
         let newStateObject = {...author}
@@ -19,14 +17,18 @@ const Form = (props) => {
     return (
         <div>
             <form onSubmit={submitHandler}>
-                <label>Name: </label>
-                <input onChange={inputHandler} name="name" value={author.name} type="text" />
+                <div className="mb-3 row justify-content-center">
+                    <label className=" col-sm-2 col-form-label">Name: </label>
+                    <div className="col-sm-4">
+                        <input onChange={inputHandler} name="name" value={author.name} type="text" className="form-control"/>
+                    </div>
+                </div>
                 {
                     errors.name?
-                    <p>{errors.name.message}</p>
+                    <p className="text-danger">{errors.name.message}</p>
                     :null
                 }
-                <input type="submit" value="Submit"/>
+                <input type="submit" value="Submit"className="btn btn-primary"/>
             </form>
         </div>
     );

@@ -27,7 +27,7 @@ const DeleteButton = (props)=>{
     }
 
     return (
-        <button onClick={deleteAuthor}>
+        <button className='btn btn-danger' onClick={deleteAuthor}>
             Delete
         </button>
     )

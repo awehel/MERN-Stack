@@ -6,6 +6,7 @@ import CreateAuthor from './components/CreateAuthor';
 import UpdateAuthor from './components/UpdateAuthor';
 import OneAuthor from './components/OneAuthor';
 import NotFound from './components/NotFound';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 
 function App() {
