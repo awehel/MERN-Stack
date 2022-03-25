@@ -25,6 +25,22 @@ class Ninja {
     }
 }
 
-const ninja1 = new Ninja("Sirius Black", 100)
-ninja1.sayName()
-ninja1.showStats()
+// const ninja1 = new Ninja("Sirius Black", 100)
+// ninja1.sayName()
+// ninja1.showStats()
+
+class Sensei extends Ninja {
+    constructor(name, health, speed, strength, wisdom=10){
+        super(name, 200, 10, 10)
+        this.wisdom = wisdom
+    }
+
+    speakWisdom(){
+        super.drinkSake()
+        console.log("A wise message")
+    }
+}
+
+const superSensei = new Sensei("Master Splinter")
+superSensei.speakWisdom()
+superSensei.showStats()
