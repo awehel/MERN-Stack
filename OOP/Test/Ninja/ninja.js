@@ -1,4 +1,4 @@
-class ninja {
+class Ninja {
     constructor(name, health, speed = 3, strength = 3) {
         this.name = name;
         this.health = health;
@@ -25,15 +25,6 @@ class ninja {
     }
 }
 
-console.log("\n  Creating Bob");
-const ninja1 = new ninja("Bob", 10);
-ninja1.sayName();
-ninja1.showStats();
-ninja1.drinkSake();
-// console.log(ninja1);
-
-console.log("\n  Creating Billy");
-const ninja2 = new ninja("Billy", 15, 5, 7);
-ninja2.sayName();
-ninja2.showStats();
-ninja2.drinkSake();
+const ninja1 = new Ninja("Sirius Black", 100)
+ninja1.sayName()
+ninja1.showStats()
