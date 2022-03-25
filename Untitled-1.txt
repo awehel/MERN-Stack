@@ -17,3 +17,8 @@ db.students.updateMany({home_state:'WA'}, {$inc: {number_of_belts: 1}})
 db.students.updateMany({name:{$exists:true}}, {$rename: {'number_of_belts':'belts_earned'}})
 
 db.students.updateMany({name:{$exists:true}}, {$unset:{lucky_number:''}})
+
+// AuthorSchema2.path("authorName").validate(async (authorName) => {
+//     const nameCount = await mongoose.models.Author2.countDocuments({ authorName });
+//     return !nameCount;
+// }, "Name already exists");

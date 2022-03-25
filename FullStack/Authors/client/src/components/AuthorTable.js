@@ -7,6 +7,7 @@ import DeleteButton from "./DeleteButton";
 const AuthorTable = (props) => {
     
     const {authorList, setAuthorList} = props
+    const [like, setLike] = useState(false)
 
     useEffect(()=>{
         axios
@@ -21,6 +22,11 @@ const AuthorTable = (props) => {
     const removeFromDom = (authorId) => {
         setAuthorList(authorList.filter((author) => author._id !== authorId));
     };
+
+    const handleLike = ()=>{
+        setLike(!like)
+        console.log(like)
+    }
     
     return (
         <div className="container mx-auto my-3">
@@ -35,11 +41,16 @@ const AuthorTable = (props) => {
                     {
                         authorList?
                             authorList.map((author, index)=>(
-                            <tr key={index}>
+                            <tr key={index} setLike="false">
                                 <td><Link to={`/author/${author._id}`}>{author.name}</Link></td>
                                 <td><Link to={`/edit/${author._id}`} className="btn btn-success">Edit</Link> | <span> </span>   
                                 {/* <Link to='/'>Delete</Link>  */}
-                                <DeleteButton id={author._id} successCallback={()=>removeFromDom(author._id)}/></td>
+                                <DeleteButton id={author._id} successCallback={()=>removeFromDom(author._id)}/> | <span> </span> 
+                               
+                                <button onClick={handleLike} className={like? "visually-hidden btn btn-warning" : "btn btn-warning"}  >Like</button>
+                                    
+                                 
+                                </td>
                             </tr>
                         
                         ))

@@ -35,7 +35,7 @@ const UpdateAuthor = (props) => {
                 navigate("/");
             })
             .catch((err) => {
-                console.log(err.response.data.errors);
+                console.log(err.response);
                 setErrors(err.response.data.errors);
                 console.log(errors)
             });

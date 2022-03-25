@@ -24,10 +24,11 @@ const CreateAuthor = (props) => {
             })
         })
         .catch((err)=>{
-            setErrors(err.response.data.errors)
+            console.log(err)
             console.log(err.response)
             console.log(err.response.data)
             console.log(err.response.data.errors)
+            setErrors(err.response.data.errors)
         })
     }
 
